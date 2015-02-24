@@ -17,6 +17,7 @@ lua_State *script_create(char *, char *, char *, char *);
 void script_headers(lua_State *, char **);
 size_t script_verify_request(lua_State *L);
 
+void script_id(lua_State *, uint64_t);
 void script_init(lua_State *, char *, int, char **);
 void script_done(lua_State *, stats *, stats *);
 void script_request(lua_State *, char **, size_t *);

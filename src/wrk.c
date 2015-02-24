@@ -143,6 +143,7 @@ int main(int argc, char **argv) {
 
         t->L = script_create(schema, host, port, path);
         script_headers(t->L, headers);
+        script_id(t->L, i);
         script_init(t->L, cfg.script, argc - optind, &argv[optind]);
 
         if (i == 0) {

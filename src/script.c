@@ -59,6 +59,11 @@ void script_headers(lua_State *L, char **headers) {
     lua_pop(L, 2);
 }
 
+void script_id(lua_State *L, uint64_t id) {
+    lua_pushinteger(L, id);
+    lua_setglobal(L, "thread_id");
+}
+
 void script_init(lua_State *L, char *script, int argc, char **argv) {
     if (script && luaL_dofile(L, script)) {
         const char *cause = lua_tostring(L, -1);
